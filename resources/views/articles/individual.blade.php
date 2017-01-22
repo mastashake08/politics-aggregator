@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">{{$article->title}}</div>
 
-                <div class="panel-body">
+                <div class="panel-body" class="img-responsive">
                   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                   <!-- all-around-politics -->
                   <ins class="adsbygoogle"
