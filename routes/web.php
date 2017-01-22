@@ -22,11 +22,15 @@ Route::get('/', function () {
 foreach($feeds as $feed){
   foreach ($feed->get_items() as $link)
   {
-    $article = \App\Article::firstOrCreate(['title' =>$link->get_title(),
+    $article = \App\Article::where('title', $link->get_title())->first();
+    if($article == null){
+    $article = \App\Article::Create(['title' =>$link->get_title(),
      'description' => $link->get_description(),
      'link' => $link->get_link(),
      'source' => $feed->get_title()]);
 
+     event(new \App\Events\NewArticle($article));
+   }
   }
 }
 dd(\App\Article::all());
