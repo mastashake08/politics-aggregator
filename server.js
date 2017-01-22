@@ -21,7 +21,7 @@ function handler(req, res) {
 
 io.on('connection', function(socket) {
     //
-
+    console.log('New Connection');
 
 
 });
