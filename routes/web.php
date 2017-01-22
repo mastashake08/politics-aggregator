@@ -12,16 +12,5 @@
 */
 
 Route::get('/', function () {
-  $feed = \FeedReader::read('https://www.buzzfeed.com/politics.xml');
-
-
-  foreach ($feed->get_items() as $link)
-  {
-    $article = \App\Article::firstOrCreate(['title' =>$link->get_title(),
-     'description' => $link->get_description(),
-     'link' => $link->get_link(),
-     'source' => $feed->get_title()]);
-     
-  }
-
+    return view('welcome');
 });

@@ -26,8 +26,14 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
          $schedule->call(function(){
-           $feed = FeedReader::read('https://www.buzzfeed.com/politics.xml');
-
+           $feeds = [
+             \FeedReader::read('https://www.buzzfeed.com/politics.xml'),
+             \FeedReader::read('http://rss.cnn.com/rss/cnn_allpolitics.rss'),
+             \FeedReader::read('http://feeds.foxnews.com/foxnews/politics'),
+             \FeedReader::read('http://feeds.feedburner.com/zerohedge/feed'),
+             \FeedReader::read('http://thehill.com/rss/syndicator/19109'),
+             ];
+         foreach($feeds as $feed){
 
            foreach ($feed->get_items() as $link)
            {
@@ -37,6 +43,7 @@ class Kernel extends ConsoleKernel
               'source' => $feed->get_title()]);
 
            }
+         }
          })->hourly();
     }
 

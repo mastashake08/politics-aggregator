@@ -12,7 +12,7 @@ use App\Article;
 class NewArticle implements ShouldBroadcast
 {
     use InteractsWithSockets, SerializesModels;
-    public $article
+    public $article;
     /**
      * Create a new event instance.
      *
