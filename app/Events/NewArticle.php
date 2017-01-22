@@ -9,7 +9,7 @@ use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use App\Article;
-class NewArticle
+class NewArticle implements ShouldBroadcast
 {
     use InteractsWithSockets, SerializesModels;
     public $article

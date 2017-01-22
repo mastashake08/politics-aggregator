@@ -6,7 +6,7 @@ use App\Events\NewArticle;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class NewArticleListener
+class NewArticleListener implements ShouldQueue
 {
     /**
      * Create the event listener.
