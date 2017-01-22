@@ -37,8 +37,7 @@ class Kernel extends ConsoleKernel
               'source' => $feed->get_title()]);
 
            }
-         })
-                  ->hourly();
+         })->hourly();
     }
 
     /**
