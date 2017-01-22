@@ -42,7 +42,8 @@ class Kernel extends ConsoleKernel
              $article = \App\Article::Create(['title' =>$link->get_title(),
               'description' => $link->get_description(),
               'link' => $link->get_link(),
-              'source' => $feed->get_title()]);
+              'source' => $feed->get_title(),
+              'slug' => str_slug($feed->get_title())]);
 
               event(new \App\Events\NewArticle($article));
             }
@@ -50,7 +51,7 @@ class Kernel extends ConsoleKernel
 
            }
          }
-         })->hourly();
+         })->everyTenMinutes();
     }
 
     /**

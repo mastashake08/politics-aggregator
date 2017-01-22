@@ -16,3 +16,10 @@ use Illuminate\Foundation\Inspiring;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->describe('Display an inspiring quote');
+Artisan::command('make:slug', function () {
+    $articles = \App\Article::all();
+    foreach($articles as $article){
+      $article->url = str_slug($article->title);
+      $article->save();
+    }
+})->describe('Change Slugs');

@@ -52,7 +52,7 @@ class ArticleController extends Controller
     {
         //
         $with = [
-          'article' => Article::find($id)
+          'article' => Article::where('url',$id)->first()
         ];
         return view('articles.individual')->with($with);
     }
