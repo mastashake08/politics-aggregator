@@ -4,6 +4,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:title" content="All Around Politics" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="{{url('/')}}" />
+        <meta property="og:description" content="Political news from left, right, and center points-of-view all aggregated in one spot. Create an account today and get daily newsletters." />
 
         <title>All Around Politics</title>
 

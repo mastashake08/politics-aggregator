@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('title',$article->title)
+@section('url',url("/articles/{$article->url}"))
+@section('description', str_limit($article->description, 150))
 @section('content')
 <div class="container-fluid">
     <div class="row">
