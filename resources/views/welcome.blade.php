@@ -132,7 +132,7 @@
 
             });
           }
-          var socket = io.connect("https://politics.socketdroid.com:6001");
+          var socket = io.connect("https://politics.socketdroid.com:6002");
           socket.on('new-article',function(data){
             notifyMe(data.title,data.url);
           });
