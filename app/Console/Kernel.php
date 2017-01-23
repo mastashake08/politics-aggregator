@@ -45,7 +45,7 @@ class Kernel extends ConsoleKernel
               'description' => $link->get_description(),
               'link' => $link->get_link(),
               'source' => $feed->get_title(),
-             'url' => str_slug($feed->get_title())]);
+             'url' => str_slug($link->get_title())]);
 
               event(new \App\Events\NewArticle($article));
             }
