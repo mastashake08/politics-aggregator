@@ -10,7 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('delete',function(){
+  $duplicateRecords = \DB::select('title')
+              ->selectRaw('count(`title`) as `occurences`')
+              ->from('articles')
+              ->groupBy('title')
+              ->having('occurences', '>', 1)
+              ->get();
+              foreach($duplicateRecords as $record) {
+    $record->delete();
+}
+})
 Route::get('/', function () {
   return view('welcome');
 });
