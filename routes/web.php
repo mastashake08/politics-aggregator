@@ -20,7 +20,7 @@ Route::get('delete',function(){
               foreach($duplicateRecords as $record) {
     $record->delete();
 }
-})
+});
 Route::get('/', function () {
   return view('welcome');
 });
