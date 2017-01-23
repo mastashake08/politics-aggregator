@@ -11,9 +11,10 @@
 |
 */
 Route::get('delete',function(){
-  $duplicateRecords = \DB::select('title')
+  $duplicateRecords = \DB::table('articles')
+              ->select('title')
               ->selectRaw('count(`title`) as `occurences`')
-              ->from('articles')
+
               ->groupBy('title')
               ->having('occurences', '>', 1)
               ->get();
