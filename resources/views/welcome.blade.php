@@ -68,6 +68,7 @@
             }
         </style>
         <script>
+
         function notifyMe(message,link) {
           // Let's check if the browser supports notifications
           if (!("Notification" in window)) {
@@ -102,10 +103,26 @@
           // At last, if the user has denied notifications, and you
           // want to be respectful there is no need to bother them any more.
           }
+          // Let's check if the browser supports notifications
+          if (!("Notification" in window)) {
+            alert("This browser does not support desktop notification");
+          }
 
+          // Let's check whether notification permissions have already been granted
+          else if (Notification.permission === "granted") {
+            // If it's okay let's create a notification
+            var notification = new Notification("Hi there!");
+          }
+
+          // Otherwise, we need to ask the user for permission
+          else if (Notification.permission !== 'denied') {
+            Notification.requestPermission(function (permission) {
+            
+            });
+          }
         </script>
         <script src="https://cdn.socket.io/socket.io-1.4.5.js">
-        var socket = io.connect("{{url('/:6001')}}");
+        var socket = io.connect("https://politics.socketdroid.com:6001");
         socket.on('new-article',function(data){
           notifyMe(data.title,data.url);
         });
