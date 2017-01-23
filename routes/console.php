@@ -12,8 +12,11 @@ use Illuminate\Foundation\Inspiring;
 | simple approach to interacting with each command's IO methods.
 |
 */
-Artisan::command('delete:article {id}', function () {
-    \App\Article::destroy($this->argument('id'));
+Artisan::command('delete:article {id} {stop}', function () {
+    for($i = $this->argument('id'); $i < $this->argument('stop'); $i = $i+2 ){
+        \App\Article::destroy($i);
+    }
+
 })->describe('Delete Article');
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
