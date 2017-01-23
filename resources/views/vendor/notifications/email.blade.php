@@ -28,8 +28,8 @@ $style = [
     'email-masthead' => 'padding: 25px 0; text-align: center;',
     'email-masthead_name' => 'font-size: 16px; font-weight: bold; color: #2F3133; text-decoration: none; text-shadow: 0 1px 0 white;',
 
-    'email-body' => 'width: 100%; margin: 0; padding: 0; border-top: 1px solid #EDEFF2; border-bottom: 1px solid #EDEFF2; background-color: #FFF;',
-    'email-body_inner' => 'width: auto; max-width: 570px; margin: 0 auto; padding: 0;',
+    'email-body' => "width: 100%; margin: 0; padding: 0; border-top: 1px solid #EDEFF2; border-bottom: 1px solid #EDEFF2; background-image: url('http://www.gannett-cdn.com/-mm-/8958f132ada352bcc36020b2a573a1523521d13f/c=0-134-3000-1829&r=x633&c=1200x630/local/-/media/2016/07/11/USATODAY/USATODAY/636038215874393959-D-DCOL-WHITEHOUSE-07-17205637.JPG'); background-size: cover;",
+    'email-body_inner' => 'width: auto; max-width: 570px; margin: 0 auto; padding: 0; background-color: #FFF;',
     'email-body_cell' => 'padding: 35px;',
 
     'email-footer' => 'width: auto; max-width: 570px; margin: 0 auto; padding: 0; text-align: center;',

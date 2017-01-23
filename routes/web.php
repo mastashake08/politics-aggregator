@@ -43,7 +43,7 @@ Route::get('sitemap', function(){
          {
             $sitemap->add(url("articles/{$post->url}"), $post->created_at, '0.9', 'monthly');
          }
-    
+
 
     // show your sitemap (options: 'xml' (default), 'html', 'txt', 'ror-rss', 'ror-rdf')
     return $sitemap->render('xml');

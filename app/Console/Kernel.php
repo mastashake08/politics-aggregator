@@ -54,6 +54,15 @@ class Kernel extends ConsoleKernel
            }
          }
          })->everyMinute();
+
+         $schedule->call(function(){
+           $articles = \App\Article::orderBy('created_at','desc')->take(5)->get();
+
+           $users = \App\User::all();
+           $users->each(function($item,$key) use($articles){
+             $item->notify(new \App\Notifications\DailyNewsletter($articles));
+           });
+         })->timezone('America/New_York')->twiceDaily('8:00','17:00');
     }
 
     /**
