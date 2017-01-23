@@ -62,7 +62,7 @@ class Kernel extends ConsoleKernel
            $users->each(function($item,$key) use($articles){
              $item->notify(new \App\Notifications\DailyNewsletter($articles));
            });
-         })->timezone('America/New_York')->twiceDaily('8:00','17:00');
+         })->timezone('America/New_York')->twiceDaily(8,17);
     }
 
     /**
