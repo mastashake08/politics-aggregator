@@ -32,7 +32,7 @@
                     (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                     <br>
-                    Original Link <a href="{{$article->link}}">here</a>
+                    Original Link <a href="{{$article->link}}" target="_blank">here</a>
                 </div>
             </div>
         </div>
