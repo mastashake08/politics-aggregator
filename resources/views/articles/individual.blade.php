@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title',$article->title)
+@section('title',addslashes($article->title))
 @section('url',url("/articles/{$article->url}"))
 @section('description', str_limit($article->description, 150))
 @section('content')
