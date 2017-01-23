@@ -14,7 +14,7 @@ class ArticleController extends Controller
     public function index()
     {
         //
-        $articles = Article::orderBy('created_at','desc')->unique('title')->paginate(10);
+        $articles = Article::all()->unique('title')->orderBy('created_at','desc')->paginate(10);
         $with = [
           'articles' => $articles
         ];
