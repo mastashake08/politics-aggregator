@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">{{$article->title}}</div>
+                <div class="panel-heading"><h2>{{$article->title}}</h2></div>
 
                 <div class="panel-body" class="img-responsive">
                   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
