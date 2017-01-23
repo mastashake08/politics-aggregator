@@ -12,7 +12,6 @@
 */
 Route::get('delete',function(){
   $duplicateRecords = \DB::table('articles')
-              ->select('title')
               ->selectRaw('count(`title`) as `occurences`')
 
               ->groupBy('title')
