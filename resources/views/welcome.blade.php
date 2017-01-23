@@ -67,6 +67,50 @@
                 margin-bottom: 30px;
             }
         </style>
+        <script>
+        function notifyMe(message,link) {
+          // Let's check if the browser supports notifications
+          if (!("Notification" in window)) {
+            alert("This browser does not support desktop notification");
+          }
+
+          // Let's check whether notification permissions have already been granted
+          else if (Notification.permission === "granted") {
+            // If it's okay let's create a notification
+            var notification = new Notification("Hi there!");
+          }
+
+          // Otherwise, we need to ask the user for permission
+          else if (Notification.permission !== 'denied') {
+            Notification.requestPermission(function (permission) {
+              // If the user accepts, let's create a notification
+              if (permission === "granted") {
+                var options = {
+                  data: {
+                    url:link,
+                  }
+                };
+                var notification = new Notification(message);
+                notification.onclick = function(event) {
+                event.preventDefault(); // prevent the browser from focusing the Notification's tab
+                window.open("https://politics.socketdroid.com/articles/"+link, '_blank');
+              }
+              }
+            });
+          }
+
+          // At last, if the user has denied notifications, and you
+          // want to be respectful there is no need to bother them any more.
+          }
+
+        </script>
+        <script src="https://cdn.socket.io/socket.io-1.4.5.js">
+        var socket = io.connect("{{url('/:6001')}}");
+        socket.on('new-article',function(data){
+          notifyMe(data.title,data.url);
+        });
+        </script>
+
     </head>
     <body>
         <div class="flex-center position-ref full-height">
