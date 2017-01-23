@@ -67,6 +67,7 @@
                 margin-bottom: 30px;
             }
         </style>
+        <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
         <script>
 
         function notifyMe(message,link) {
@@ -131,12 +132,10 @@
 
             });
           }
-        </script>
-        <script src="https://cdn.socket.io/socket.io-1.4.5.js">
-        var socket = io.connect("https://politics.socketdroid.com:6001");
-        socket.on('new-article',function(data){
-          notifyMe(data.title,data.url);
-        });
+          var socket = io.connect("https://politics.socketdroid.com:6001");
+          socket.on('new-article',function(data){
+            notifyMe(data.title,data.url);
+          });
         </script>
 
     </head>
