@@ -26,11 +26,10 @@ Route::get('sitemap', function(){
 
     // set cache key (string), duration in minutes (Carbon|Datetime|int), turn on/off (boolean)
     // by default cache is disabled
-    $sitemap->setCache('laravel.sitemap', 60);
+
 
     // check if there is cached sitemap and build new only if is not
-    if (!$sitemap->isCached())
-    {
+
          // add item to the sitemap (url, date, priority, freq)
          $sitemap->add(url('/'), \Carbon\Carbon::now(), '1.0', 'daily');
 
@@ -42,9 +41,9 @@ Route::get('sitemap', function(){
          // add every post to the sitemap
          foreach ($posts as $post)
          {
-            $sitemap->add(url($post->url), $post->created_at, '0.9', 'monthly');
+            $sitemap->add(url("articles/{$post->url}"), $post->created_at, '0.9', 'monthly');
          }
-    }
+    
 
     // show your sitemap (options: 'xml' (default), 'html', 'txt', 'ror-rss', 'ror-rdf')
     return $sitemap->render('xml');
