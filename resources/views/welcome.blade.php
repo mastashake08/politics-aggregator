@@ -83,6 +83,8 @@
               var options = {
                 data: {
                   url:link,
+                  sound: "{{url('/censor.mp3')}}",
+                  vibrate: [200, 100, 200]
                 }
               };
               var notification = new Notification(message,options);
@@ -101,6 +103,8 @@
                 var options = {
                   data: {
                     url:link,
+                    sound: "{{url('/censor.mp3')}}",
+                    vibrate: [200, 100, 200]
                   }
                 };
                 var notification = new Notification(message,options);
