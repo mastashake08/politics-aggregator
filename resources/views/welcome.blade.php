@@ -78,7 +78,18 @@
           // Let's check whether notification permissions have already been granted
           else if (Notification.permission === "granted") {
             // If it's okay let's create a notification
-            var notification = new Notification("Hi there!");
+            if (permission === "granted") {
+              var options = {
+                data: {
+                  url:link,
+                }
+              };
+              var notification = new Notification(message,options);
+              notification.onclick = function(event) {
+              event.preventDefault(); // prevent the browser from focusing the Notification's tab
+              window.open("https://politics.socketdroid.com/articles/"+link, '_blank');
+            }
+            }
           }
 
           // Otherwise, we need to ask the user for permission
@@ -91,7 +102,7 @@
                     url:link,
                   }
                 };
-                var notification = new Notification(message);
+                var notification = new Notification(message,options);
                 notification.onclick = function(event) {
                 event.preventDefault(); // prevent the browser from focusing the Notification's tab
                 window.open("https://politics.socketdroid.com/articles/"+link, '_blank');
@@ -111,13 +122,13 @@
           // Let's check whether notification permissions have already been granted
           else if (Notification.permission === "granted") {
             // If it's okay let's create a notification
-            var notification = new Notification("Hi there!");
+
           }
 
           // Otherwise, we need to ask the user for permission
           else if (Notification.permission !== 'denied') {
             Notification.requestPermission(function (permission) {
-            
+
             });
           }
         </script>
