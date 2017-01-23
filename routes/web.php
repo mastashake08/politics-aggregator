@@ -19,3 +19,34 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::resource('articles','ArticleController');
+Route::get('sitemap', function(){
+
+    // create new sitemap object
+    $sitemap = App::make("sitemap");
+
+    // set cache key (string), duration in minutes (Carbon|Datetime|int), turn on/off (boolean)
+    // by default cache is disabled
+    $sitemap->setCache('laravel.sitemap', 60);
+
+    // check if there is cached sitemap and build new only if is not
+    if (!$sitemap->isCached())
+    {
+         // add item to the sitemap (url, date, priority, freq)
+         $sitemap->add(url('/'), \Carbon\Carbon::now(), '1.0', 'daily');
+
+         $sitemap->add(url('articles'), \Carbon\Carbon::now(), '0.9', 'daily');
+
+         // get all posts from db
+         $posts = \DB::table('articles')->orderBy('created_at', 'desc')->get();
+
+         // add every post to the sitemap
+         foreach ($posts as $post)
+         {
+            $sitemap->add(url($post->url), $post->created_at, '0.9', 'monthly');
+         }
+    }
+
+    // show your sitemap (options: 'xml' (default), 'html', 'txt', 'ror-rss', 'ror-rdf')
+    return $sitemap->render('xml');
+
+});

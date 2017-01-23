@@ -178,6 +178,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Awjudd\FeedReader\FeedReaderServiceProvider::class,
+        Roumen\Sitemap\SitemapServiceProvider::class,
 
     ],
 
