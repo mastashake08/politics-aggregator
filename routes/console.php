@@ -13,7 +13,7 @@ use Illuminate\Foundation\Inspiring;
 |
 */
 Artisan::command('delete:article {id} {stop}', function () {
-    for($i = $this->argument('id'); $i < $this->argument('stop'); $i = $i+2 ){
+    for($i = $this->argument('id'); $i < $this->argument('stop'); $i = $i-2 ){
         \App\Article::destroy($i);
     }
 
