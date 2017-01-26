@@ -13,7 +13,7 @@
     <meta property="og:description" content="@yield('description')" />
 
     <meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@mastashake08" />
+<meta name="twitter:site" content="@mastashake08"/>
 <meta name="twitter:title" content="@yield('title')" />
 <meta name="twitter:description" content="@yield('description')" />
     <title>{{ config('app.name', 'Laravel') }} - @yield('title')</title>

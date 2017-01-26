@@ -43,8 +43,29 @@
                       fjs.parentNode.insertBefore(js, fjs);
                     }(document, 'script', 'facebook-jssdk'));</script>
 
+                    <script>window.twttr = (function(d, s, id) {
+                      var js, fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                      if (d.getElementById(id)) return t;
+                      js = d.createElement(s);
+                      js.id = id;
+                      js.src = "https://platform.twitter.com/widgets.js";
+                      fjs.parentNode.insertBefore(js, fjs);
+
+                      t._e = [];
+                      t.ready = function(f) {
+                        t._e.push(f);
+                      };
+
+                      return t;
+                    }(document, "script", "twitter-wjs"));</script>
+
                   	<!-- Your share button code -->
                   	<div class="fb-share-button" data-href="https://allaroundpolitics.com" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="{{url()->current()}}">Share</a></div>
+                    <br>
+                    <a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet">
+Tweet</a>
                 </div>
             </div>
         </div>
