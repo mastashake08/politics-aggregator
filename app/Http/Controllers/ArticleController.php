@@ -29,6 +29,9 @@ class ArticleController extends Controller
     public function search(Request $request)
     {
         //
+        if($request->keyword == ''){
+          return redirect('/articles');
+        }
         $articles = Article::where('title','LIKE',"%{$request->keyword}%")->orWhere('description','LIKE',"%{$request->keyword}%")->orderBy('created_at','desc')->paginate(10);
         $with = [
           'articles' => $articles
