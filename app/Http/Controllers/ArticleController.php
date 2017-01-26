@@ -29,7 +29,7 @@ class ArticleController extends Controller
     public function search(Request $request)
     {
         //
-        $articles = Article::search($request->keyword)->paginate(10);
+        $articles = Article::where('title','%LIKE%',$request->keyword)->orWhere('description','%LIKE%',$request->keyword)->paginate(10);
         $with = [
           'articles' => $articles
         ];
