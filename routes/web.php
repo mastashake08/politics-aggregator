@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::resource('/articles','ArticleController');
-Route::get('/articles/search','ArticleController@search');
+Route::get('/article/search','ArticleController@search');
 Route::get('/sitemap', function(){
 
     // create new sitemap object

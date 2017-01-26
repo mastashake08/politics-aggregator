@@ -18,9 +18,11 @@
                 <div class="panel-heading">Articles</div>
 
                 <div class="panel-body">
-                  <form action="/articles/search" method="get">
-                    <input type="text" name="keyword" placeholder="Search By Keyword">
-                    <button class="btn btn-success btn-sm">Search</button>
+                  <form action="/article/search" method="get">
+                    <div class="form-group col-md-6">
+                    <input type="text" class="form-control" name="keyword" placeholder="Search By Keyword">
+                  </div>
+                  <button class="btn btn-success">Search</button>
                   </form>
                     <table class="table table-striped">
                       @foreach($articles as $article)
