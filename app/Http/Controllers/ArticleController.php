@@ -22,6 +22,21 @@ class ArticleController extends Controller
     }
 
     /**
+     * Display a search listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
+    {
+        //
+        $articles = Article::search($request->keyword)->paginate(10);
+        $with = [
+          'articles' => $articles
+        ];
+        return view('articles.all')->with($with);
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

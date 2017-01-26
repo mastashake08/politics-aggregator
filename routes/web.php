@@ -18,8 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::resource('articles','ArticleController');
-Route::get('sitemap', function(){
+Route::resource('/articles','ArticleController');
+Route::get('/articles/search','ArticleController@search');
+Route::get('/sitemap', function(){
 
     // create new sitemap object
     $sitemap = App::make("sitemap");
