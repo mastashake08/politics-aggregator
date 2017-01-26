@@ -60,7 +60,7 @@
           var notification = new Notification(message,options);
           notification.onclick = function(event) {
           event.preventDefault(); // prevent the browser from focusing the Notification's tab
-          window.open("https://politics.socketdroid.com/articles/"+link, '_blank');
+          window.open("https://allaroundpolitics.com/articles/"+link, '_blank');
         }
         }
       }
@@ -80,7 +80,7 @@
             var notification = new Notification(message,options);
             notification.onclick = function(event) {
             event.preventDefault(); // prevent the browser from focusing the Notification's tab
-            window.open("https://politics.socketdroid.com/articles/"+link, '_blank');
+            window.open("https://allaroundpolitics.com/articles/"+link, '_blank');
           }
           }
         });
@@ -106,7 +106,7 @@
 
         });
       }
-      var socket = io.connect("https://politics.socketdroid.com:6002");
+      var socket = io.connect("https://allaroundpolitics.com:6002");
       socket.on('new-article',function(data){
         notifyMe(data.title,data.url);
       });
