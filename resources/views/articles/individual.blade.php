@@ -61,7 +61,7 @@
                     }(document, "script", "twitter-wjs"));</script>
 
                   	<!-- Your share button code -->
-                  	<div class="fb-share-button" data-href="https://allaroundpolitics.com" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="{{url()->current()}}">Share</a></div>
+                  	<div class="fb-share-button" data-href="{{url()->current()}}" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="{{url()->current()}}">Share</a></div>
                     <br>
                     <a class="twitter-share-button"
   href="https://twitter.com/intent/tweet">
