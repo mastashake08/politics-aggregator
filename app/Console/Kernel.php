@@ -66,10 +66,14 @@ class Kernel extends ConsoleKernel
            $users->each(function($item,$key) use($articles){
              $item->notify(new \App\Notifications\DailyNewsletter($articles));
            });
-           event(new \App\Events\Reminder());
+
          })->timezone('America/New_York')->twiceDaily(8,17);
 
-         
+         $schedule->call(function(){
+           event(new \App\Events\Reminder());
+         })->everyMinute();
+
+
     }
 
     /**
