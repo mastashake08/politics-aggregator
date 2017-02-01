@@ -32,7 +32,7 @@
                     (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                     <br>
-                    Original Link <a href="{{$article->link}}">here</a>
+                    Original Link <a href="{{$article->link}}" target="_blank">here</a>
                     <!-- Load Facebook SDK for JavaScript -->
                     <div id="fb-root"></div>
                     <script>(function(d, s, id) {

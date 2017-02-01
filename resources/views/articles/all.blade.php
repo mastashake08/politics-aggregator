@@ -27,7 +27,7 @@
                     <table class="table table-striped">
                       @foreach($articles as $article)
                       <tr>
-                        <td><a href="/articles/{{$article->url}}" target="_blank">{{$article->title}}</a></td>
+                        <td><a href="/articles/{{$article->url}}" >{{$article->title}}</a></td>
 
                       </tr>
                       @endforeach
