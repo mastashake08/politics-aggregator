@@ -18,5 +18,5 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 Route::get('/articles',function(){
-  return \App\Article::paginate(25);
+  return \App\Article::orderBy('created_at','desc')->paginate(25);
 });
