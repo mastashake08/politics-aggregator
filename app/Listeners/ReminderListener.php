@@ -6,7 +6,7 @@ use App\Events\Reminder;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ReminderListener
+class ReminderListener implements ShouldQueue
 {
     /**
      * Create the event listener.

@@ -9,7 +9,7 @@ use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class Reminder
+class Reminder implements ShouldBroadcast
 {
     use InteractsWithSockets, SerializesModels;
 
