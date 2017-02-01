@@ -17,6 +17,4 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
-Route::get('/articles',function(){
-  return \App\Article::orderBy('created_at','desc')->paginate(25);
-});
+Route::resource('/articles','ApiArticleController');
