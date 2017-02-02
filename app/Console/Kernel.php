@@ -72,7 +72,7 @@ class Kernel extends ConsoleKernel
          $schedule->call(function(){
            $article = \App\Article::orderBy('created_at','desc')->first();
            event(new \App\Events\Reminder($article->title));
-         })->timezone('America/New_York')->hourly();
+         })->timezone('America/New_York')->everyMinute();
 
 
     }
