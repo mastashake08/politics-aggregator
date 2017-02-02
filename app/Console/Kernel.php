@@ -70,8 +70,9 @@ class Kernel extends ConsoleKernel
          })->timezone('America/New_York')->twiceDaily(8,17);
 
          $schedule->call(function(){
-           event(new \App\Events\Reminder());
-         })->timezone('America/New_York')->twiceDaily(10,19);
+           $article = \App\Article::orderBy('created_at','desc')->first();
+           event(new \App\Events\Reminder($article->title));
+         })->timezone('America/New_York')->hourly();
 
 
     }

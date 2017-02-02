@@ -12,15 +12,16 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 class Reminder implements ShouldBroadcast
 {
     use InteractsWithSockets, SerializesModels;
-
+    public $message;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($message)
     {
         //
+        $this->message = $message;
     }
 
     /**
