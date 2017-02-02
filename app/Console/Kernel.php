@@ -38,6 +38,9 @@ class Kernel extends ConsoleKernel
              \FeedReader::read('http://www.latimes.com/nation/politics/rss2.0.xml'),
              \FeedReader::read('http://rssfeeds.usatoday.com/UsatodaycomWashington-TopStories'),
              \FeedReader::read('http://feeds.washingtonpost.com/rss/politics'),
+             \FeedReader::read('http://www.politico.com/rss/politics08.xml'),
+             \FeedReader::read('http://feeds.feedburner.com/realclearpolitics/qlMj'),
+             \FeedReader::read('https://fivethirtyeight.com/politics/feed/'),
              ];
          foreach($feeds as $feed){
 
