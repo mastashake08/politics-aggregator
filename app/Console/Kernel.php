@@ -31,7 +31,7 @@ class Kernel extends ConsoleKernel
              \FeedReader::read('http://rss.cnn.com/rss/cnn_allpolitics.rss'),
              \FeedReader::read('http://feeds.foxnews.com/foxnews/politics'),
              \FeedReader::read('http://feeds.feedburner.com/zerohedge/feed'),
-             \FeedReader::read('http://thehill.com/rss/syndicator/19109'),
+             //\FeedReader::read('http://thehill.com/rss/syndicator/19109'),
              \FeedReader::read('http://feeds.feedburner.com/dailyreckoning'),
              \FeedReader::read('http://www.wsj.com/xml/rss/3_7085.xml'),
              \FeedReader::read('http://rss.nytimes.com/services/xml/rss/nyt/Politics.xml'),
@@ -41,6 +41,9 @@ class Kernel extends ConsoleKernel
              \FeedReader::read('http://www.politico.com/rss/politics08.xml'),
              \FeedReader::read('http://feeds.feedburner.com/realclearpolitics/qlMj'),
              \FeedReader::read('https://fivethirtyeight.com/politics/feed/'),
+             \FeedReader::read('http://theantimedia.org/feed/'),
+             \FeedReader::read('http://www.infowars.com/rss/daily/'),
+             \FeedReader::read('http://www.naturalnews.com/rss.xml'),
              ];
          foreach($feeds as $feed){
 
