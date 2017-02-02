@@ -71,7 +71,7 @@ class Kernel extends ConsoleKernel
 
          $schedule->call(function(){
            event(new \App\Events\Reminder());
-         })->everyMinute();
+         })->timezone('America/New_York')->twiceDaily(10,19);
 
 
     }
