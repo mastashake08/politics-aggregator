@@ -11,11 +11,12 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="@yield('url')" />
     <meta property="og:description" content="@yield('description')" />
-
+    <meta property="og:image" content=@yield('image') />
     <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@mastashake08"/>
 <meta name="twitter:title" content="@yield('title')" />
 <meta name="twitter:description" content="@yield('description')" />
+<meta property="twitter:image" content=@yield('image') />
     <title>{{ config('app.name', 'Laravel') }} - @yield('title')</title>
 
     <!-- Styles -->
