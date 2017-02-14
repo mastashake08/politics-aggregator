@@ -15,7 +15,7 @@ class AddImageUrlToArticles extends Migration
     {
         Schema::table('articles', function (Blueprint $table) {
             //
-            $table->string('logo');
+            $table->string('logo')->nullable();
         });
     }
 
@@ -28,6 +28,7 @@ class AddImageUrlToArticles extends Migration
     {
         Schema::table('articles', function (Blueprint $table) {
             //
+            $table->dropColumn('logo');
         });
     }
 }
