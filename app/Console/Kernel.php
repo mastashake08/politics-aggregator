@@ -33,7 +33,7 @@ class Kernel extends ConsoleKernel
              \FeedReader::read('http://feeds.feedburner.com/zerohedge/feed'),
              //\FeedReader::read('http://thehill.com/rss/syndicator/19109'),
              \FeedReader::read('http://feeds.feedburner.com/dailyreckoning'),
-             \FeedReader::read('http://www.wsj.com/xml/rss/3_7085.xml'),
+             //\FeedReader::read('http://www.wsj.com/xml/rss/3_7085.xml'),
              \FeedReader::read('http://rss.nytimes.com/services/xml/rss/nyt/Politics.xml'),
              \FeedReader::read('http://www.latimes.com/nation/politics/rss2.0.xml'),
              \FeedReader::read('http://rssfeeds.usatoday.com/UsatodaycomWashington-TopStories'),
@@ -45,21 +45,26 @@ class Kernel extends ConsoleKernel
              \FeedReader::read('http://www.infowars.com/rss/daily/'),
              \FeedReader::read('http://www.naturalnews.com/rss.xml'),
              ];
-         foreach($feeds as $feed){
+           $feeds = collect($feeds)->random(count($feeds));
 
+         foreach($feeds as $feed){
            foreach ($feed->get_items() as $link)
            {
+
              $article = \App\Article::where('title' , $link->get_title())->first();
              if($article == null){
              $article = \App\Article::Create(['title' =>$link->get_title(),
               'description' => $link->get_description(),
               'link' => $link->get_link(),
               'source' => $feed->get_title(),
-             'url' => str_slug($link->get_title())]);
+             'url' => str_slug($link->get_title()),
+             'logo' => $feed->get_image_url()
+             ]);
 
               event(new \App\Events\NewArticle($article));
-            }
 
+
+            }
 
            }
          }

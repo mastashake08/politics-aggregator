@@ -19,6 +19,13 @@ Artisan::command('delete:article {id} {stop}', function () {
     }
 
 })->describe('Delete Article');
+Artisan::command('delete:article-all }', function () {
+    $articles = \App\Article::all();
+    $articles->each(function($item,$key){
+      $item->delete();
+    });
+
+})->describe('Delete All Article');
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->describe('Display an inspiring quote');
