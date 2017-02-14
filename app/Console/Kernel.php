@@ -45,7 +45,7 @@ class Kernel extends ConsoleKernel
 
              $article = \App\Article::where('title' , $link->get_title())->first();
              if($article == null){
-               if($link->get_description != null){
+               if($link->get_description() != null){
              $article = \App\Article::Create(['title' =>$link->get_title(),
               'description' => $link->get_description(),
               'link' => $link->get_link(),
