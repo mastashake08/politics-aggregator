@@ -27,7 +27,9 @@
                     <table class="table table-striped">
                       @foreach($articles as $article)
                       <tr>
-                        <td><image src="{{$article->logo}}"/></td>
+                        @if($article->logo != 'null')
+                        <td><image src="{{$article->logo}}" width="100" heigh="100"/></td>
+                          @endif
                         <td><a href="/articles/{{$article->url}}" target="_blank">{{$article->title}}</a></td>
 
                       </tr>
