@@ -28,22 +28,14 @@ class Kernel extends ConsoleKernel
          $schedule->call(function(){
            $feeds = [
              \FeedReader::read('https://www.buzzfeed.com/politics.xml'),
-             \FeedReader::read('http://rss.cnn.com/rss/cnn_allpolitics.rss'),
-             \FeedReader::read('http://feeds.foxnews.com/foxnews/politics'),
              \FeedReader::read('http://feeds.feedburner.com/zerohedge/feed'),
-             //\FeedReader::read('http://thehill.com/rss/syndicator/19109'),
-             \FeedReader::read('http://feeds.feedburner.com/dailyreckoning'),
-             //\FeedReader::read('http://www.wsj.com/xml/rss/3_7085.xml'),
              \FeedReader::read('http://rss.nytimes.com/services/xml/rss/nyt/Politics.xml'),
              \FeedReader::read('http://www.latimes.com/nation/politics/rss2.0.xml'),
-             \FeedReader::read('http://rssfeeds.usatoday.com/UsatodaycomWashington-TopStories'),
              \FeedReader::read('http://feeds.washingtonpost.com/rss/politics'),
              \FeedReader::read('http://www.politico.com/rss/politics08.xml'),
              \FeedReader::read('http://feeds.feedburner.com/realclearpolitics/qlMj'),
              \FeedReader::read('https://fivethirtyeight.com/politics/feed/'),
              \FeedReader::read('http://theantimedia.org/feed/'),
-             \FeedReader::read('http://www.infowars.com/rss/daily/'),
-             \FeedReader::read('http://www.naturalnews.com/rss.xml'),
              ];
            $feeds = collect($feeds)->random(count($feeds));
 
