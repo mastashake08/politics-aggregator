@@ -50,7 +50,7 @@ class Kernel extends ConsoleKernel
               'link' => $link->get_link(),
               'source' => $feed->get_title(),
              'url' => str_slug($link->get_title()),
-             'logo' => $feed->get_image_url() == null ? $feed->get_image_url : ''
+             'logo' => $feed->get_image_url() == null ? $feed->get_image_url() : ''
              ]);
 
               event(new \App\Events\NewArticle($article));
