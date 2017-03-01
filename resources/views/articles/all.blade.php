@@ -30,7 +30,7 @@
                         <td>
                           <h2><a href="/articles/{{$article->url}}" target="_blank">{{$article->title}}</a></h2>
                           <br>
-                          <h3>{{$article->source}} - {{$article->created_at}}</h3>
+                          <h3><a href="{{$article->url}}" target="blank"></a></h3>
                         </td>
 
                       </tr>
