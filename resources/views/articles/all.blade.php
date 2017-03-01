@@ -27,7 +27,11 @@
                     <table class="table table-striped">
                       @foreach($articles as $article)
                       <tr>
-                        <td><a href="/articles/{{$article->url}}" target="_blank">{{$article->title}}</a></td>
+                        <td>
+                          <h2><a href="/articles/{{$article->url}}" target="_blank">{{$article->title}}</a></h2>
+                          <br>
+                          <h3>{{$article->source}} - {{$article->created_at}}</h3>
+                        </td>
 
                       </tr>
                       @endforeach
