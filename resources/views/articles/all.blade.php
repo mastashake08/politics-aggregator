@@ -30,12 +30,7 @@
                         <td>
                           <h2><a href="/articles/{{$article->url}}" target="_blank">{{$article->title}}</a></h2>
                           <br>
-                          <h5>
-                            @if($article->source != null)
-                            {{$article->source}}
-                            @else
-                            Source - <a href="{{$article->link}}" target="blank">{{$article->link}}</a></h5>
-                            @endif
+                            <a href="{{$article->link}}" target="blank">Source</a>
                         </td>
 
                       </tr>
