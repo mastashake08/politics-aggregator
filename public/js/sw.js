@@ -1,3 +1,4 @@
+"use strict";
 importScripts('socket.io-1.4.5.js');
 function notifyMe(message,link) {
 
