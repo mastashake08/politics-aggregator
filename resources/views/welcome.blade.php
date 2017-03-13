@@ -69,7 +69,7 @@
         </style>
         <script>
         window.addEventListener('load', function() {
-         navigator.Worker.register('/js/sw.js').then(function(registration) {
+         navigator.Worker('/js/sw.js').then(function(registration) {
            // Registration was successful
            console.log('ServiceWorker registration successful with scope: ', registration.scope);
          }).catch(function(err) {
