@@ -1,4 +1,4 @@
-importScripts('https://cdn.socket.io/socket.io-1.4.5.js');
+importScripts('socket.io-1.4.5.js');
 function notifyMe(message,link) {
   // Let's check if the browser supports notifications
   if (!("Notification" in window)) {
