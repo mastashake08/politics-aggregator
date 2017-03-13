@@ -10,14 +10,14 @@ function notifyMe(message,link) {
       var options = {
         data: {
           url:link,
-          sound: "{{url('/censor.mp3')}}",
+          sound: "https://allaroundpolitics.com/censor.mp3'",
           vibrate: [200, 100, 200]
         }
       };
       var notification = new Notification(message,options);
       notification.onclick = function(event) {
       event.preventDefault(); // prevent the browser from focusing the Notification's tab
-      window.open("https://politics.socketdroid.com/articles/"+link, '_blank');
+      window.open("https://allaroundpolitics.com/articles/"+link, '_blank');
     }
     }
   }
@@ -37,7 +37,7 @@ function notifyMe(message,link) {
         var notification = new Notification(message,options);
         notification.onclick = function(event) {
         event.preventDefault(); // prevent the browser from focusing the Notification's tab
-        window.open("https://politics.socketdroid.com/articles/"+link, '_blank');
+        window.open("https://allaroundpolitics.com/articles/"+link, '_blank');
       }
       }
     });
@@ -61,7 +61,7 @@ function notifyMe(message,link) {
 
     });
   }
-  var socket = io.connect("https://politics.socketdroid.com:6002");
+  var socket = io.connect("https://allaroundpolitics.com:6002");
   socket.on('new-article',function(data){
     notifyMe(data.title,data.url);
   });
