@@ -69,8 +69,12 @@
         </style>
         <script>
         window.addEventListener('load', function() {
+          Notification.requestPermission(function (permission) {
+           console.log('Notifications granted');
+          });
          new Worker('/js/sw.js');
        });
+
         </script>
 
 

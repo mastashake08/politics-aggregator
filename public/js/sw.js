@@ -24,23 +24,7 @@ function notifyMe(message,link) {
 
   // Otherwise, we need to ask the user for permission
   if (Notification.permission !== 'denied') {
-    Notification.requestPermission(function (permission) {
-      // If the user accepts, let's create a notification
-      if (permission === "granted") {
-        var options = {
-          data: {
-            url:link,
-            sound: "{{url('/censor.mp3')}}",
-            vibrate: [200, 100, 200]
-          }
-        };
-        var notification = new Notification(message,options);
-        notification.onclick = function(event) {
-        event.preventDefault(); // prevent the browser from focusing the Notification's tab
-        window.open("https://allaroundpolitics.com/articles/"+link, '_blank');
-      }
-      }
-    });
+    
   }
 
   // At last, if the user has denied notifications, and you
