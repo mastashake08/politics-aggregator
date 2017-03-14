@@ -31,7 +31,7 @@ function notifyMe(message,link) {
   // want to be respectful there is no need to bother them any more.
   }
 
-  }
+
   var socket = io.connect("https://allaroundpolitics.com:6002");
   socket.on('new-article',function(data){
     notifyMe(data.title,data.url);
