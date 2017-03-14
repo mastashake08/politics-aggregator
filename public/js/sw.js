@@ -24,26 +24,13 @@ function notifyMe(message,link) {
 
   // Otherwise, we need to ask the user for permission
   if (Notification.permission !== 'denied') {
-    
+
   }
 
   // At last, if the user has denied notifications, and you
   // want to be respectful there is no need to bother them any more.
   }
-  // Let's check if the browser supports notifications
 
-
-  // Let's check whether notification permissions have already been granted
- if (Notification.permission === "granted") {
-    // If it's okay let's create a notification
-
-  }
-
-  // Otherwise, we need to ask the user for permission
-  else if (Notification.permission !== 'denied') {
-    Notification.requestPermission(function (permission) {
-
-    });
   }
   var socket = io.connect("https://allaroundpolitics.com:6002");
   socket.on('new-article',function(data){
