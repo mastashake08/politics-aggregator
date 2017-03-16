@@ -16,5 +16,13 @@ use Illuminate\Http\Request;
 Route::get('/users', function () {
     return \App\User::All();
 });
-
+Route::get('delete-users',function(){
+  $users = \App\User::all();
+  $users->each(function($item, $key){
+    if($item->id > 4){
+      $item->delete();
+    }
+  });
+  return $users;
+});
 Route::resource('/articles','ApiArticleController');
