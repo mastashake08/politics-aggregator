@@ -21,7 +21,7 @@
                   <script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
                   </script>
-                    <iframe src="{{$article->link}}" sandbox width="100%"></iframe>
+                    <iframe src="{{$article->link}}" sandbox width="100%" height="100%"></iframe>
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- all-around-politics -->
                     <ins class="adsbygoogle"
