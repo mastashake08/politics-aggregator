@@ -2,8 +2,8 @@
 var fs =  require('fs');
 
 var options = {
-    key:    fs.readFileSync('/etc/nginx/ssl/allaroundpolitics.com/162622/server.key'),
-    cert:   fs.readFileSync('/etc/nginx/ssl/allaroundpolitics.com/162622/server.crt')
+    key:    fs.readFileSync('/etc/nginx/ssl/allaroundpolitics.com/268688/server.key'),
+    cert:   fs.readFileSync('/etc/nginx/ssl/allaroundpolitics.com/268688/server.crt')
 };
 var app = require('https').createServer(options);
 var io = require('socket.io')(app);
