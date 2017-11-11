@@ -3,8 +3,22 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="manifest.json">
 
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="msapplication-starturl" content="/">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="/images/icons/icon-72x72.png">
+<link rel="icon" href="/images/icons/icon-96x96.png">
+<link rel="icon" href="/images/icons/icon-128x128.png">
+<link rel="icon" href="/images/icons/icon-144x144.png">
+<link rel="icon" href="/images/icons/icon-152x152.png">
+<link rel="icon" href="/images/icons/icon-192x192.png">
+<link rel="icon" href="/images/icons/icon-384x384.png">
+<link rel="icon" href="/images/icons/icon-512x512.png">
+<link rel="apple-touch-icon" href="/images/icons/icon-128x128.png">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta property="og:title" content="@yield('title')" />
@@ -41,7 +55,7 @@
 </head>
 <body>
     <div id="app">
-        
+
 
         @yield('content')
     </div>
