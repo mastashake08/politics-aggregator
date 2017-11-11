@@ -72,7 +72,7 @@ class ArticleController extends Controller
         $with = [
           'article' => Article::where('url',$id)->first()
         ];
-        return view('articles.individual')->with($with);
+        return redirect($article->link);
     }
 
     /**
