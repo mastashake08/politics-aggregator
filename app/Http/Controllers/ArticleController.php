@@ -69,10 +69,10 @@ class ArticleController extends Controller
     public function show($id)
     {
         //
+        $article = Article::where('url',$id)->first();
         $with = [
-          'article' => Article::where('url',$id)->first()
+          'article' => $article
         ];
-        dd($article);
         return redirect($article->link);
     }
 
