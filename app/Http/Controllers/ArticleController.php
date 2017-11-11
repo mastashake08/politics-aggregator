@@ -72,6 +72,7 @@ class ArticleController extends Controller
         $with = [
           'article' => Article::where('url',$id)->first()
         ];
+        dd($article);
         return redirect($article->link);
     }
 
