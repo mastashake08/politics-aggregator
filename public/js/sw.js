@@ -1,8 +1,8 @@
 var cacheName = 'aap-cache';
 var filesToCache = [
   '/articles',
-  '/css/all.css',
-  '/js/all.js',
+  '/css/app.css',
+  '/js/app.js',
   '/'
 ];
 
