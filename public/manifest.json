@@ -47,15 +47,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "prefer_related_applications": true,
-  "related_applications": [{
-    "platform": "web"
-  },
-  {
-  "platform": "play",
-  "id": "com.mastashake08.allaroundpolitics"
-  }
-],
-  "splash_pages": null
+  ]
 }

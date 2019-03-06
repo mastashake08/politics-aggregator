@@ -38,94 +38,11 @@
     <link href="/css/app.css" rel="stylesheet">
 
     <!-- Scripts -->
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-68044308-3', 'auto');
-  ga('send', 'pageview');
-
-</script>
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
-    </script>
-    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
-    <script>
-
-    function notifyMe(message,link) {
-      // Let's check if the browser supports notifications
-      if (!("Notification" in window)) {
-        alert("This browser does not support desktop notification");
-      }
-
-      // Let's check whether notification permissions have already been granted
-      else if (Notification.permission === "granted") {
-        // If it's okay let's create a notification
-        if (permission === "granted") {
-          var options = {
-            data: {
-              url:link,
-              sound: "{{url('/censor.mp3')}}",
-              vibrate: [200, 100, 200]
-            }
-          };
-          var notification = new Notification(message,options);
-          notification.onclick = function(event) {
-          event.preventDefault(); // prevent the browser from focusing the Notification's tab
-          window.open("https://aap.thegeniusallegiance.com/articles/"+link, '_blank');
-        }
-        }
-      }
-
-      // Otherwise, we need to ask the user for permission
-      else if (Notification.permission !== 'denied') {
-        Notification.requestPermission(function (permission) {
-          // If the user accepts, let's create a notification
-          if (permission === "granted") {
-            var options = {
-              data: {
-                url:link,
-                sound: "{{url('/censor.mp3')}}",
-                vibrate: [200, 100, 200]
-              }
-            };
-            var notification = new Notification(message,options);
-            notification.onclick = function(event) {
-            event.preventDefault(); // prevent the browser from focusing the Notification's tab
-            window.open("https://aap.thegeniusallegiance.com/articles/"+link, '_blank');
-          }
-          }
-        });
-      }
-
-      // At last, if the user has denied notifications, and you
-      // want to be respectful there is no need to bother them any more.
-      }
-      // Let's check if the browser supports notifications
-      if (!("Notification" in window)) {
-        alert("This browser does not support desktop notification");
-      }
-
-      // Let's check whether notification permissions have already been granted
-      else if (Notification.permission === "granted") {
-        // If it's okay let's create a notification
-
-      }
-
-      // Otherwise, we need to ask the user for permission
-      else if (Notification.permission !== 'denied') {
-        Notification.requestPermission(function (permission) {
-
-        });
-      }
-      var socket = io.connect("https://allaroundpolitics.com:6002");
-      socket.on('new-article',function(data){
-        notifyMe(data.title,data.url);
-      });
     </script>
 </head>
 <body>
