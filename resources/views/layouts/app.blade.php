@@ -32,6 +32,7 @@
 <meta name="twitter:title" content="@yield('title')" />
 <meta name="twitter:description" content="@yield('description')" />
 <meta property="twitter:image" content=@yield('image') />
+<meta name="theme-color"/>
     <title>{{ config('app.name', 'Laravel') }} - @yield('title')</title>
 
     <!-- Styles -->
@@ -43,6 +44,13 @@
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
+    </script>
+    <script>
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+               .register('/sw.js')
+               .then(function() { console.log("Service Worker Registered"); });
+    }
     </script>
 </head>
 <body>
