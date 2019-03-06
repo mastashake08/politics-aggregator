@@ -76,7 +76,7 @@
           var notification = new Notification(message,options);
           notification.onclick = function(event) {
           event.preventDefault(); // prevent the browser from focusing the Notification's tab
-          window.open("https://allaroundpolitics.com/articles/"+link, '_blank');
+          window.open("https://aap.thegeniusallegiance.com/articles/"+link, '_blank');
         }
         }
       }
@@ -96,7 +96,7 @@
             var notification = new Notification(message,options);
             notification.onclick = function(event) {
             event.preventDefault(); // prevent the browser from focusing the Notification's tab
-            window.open("https://allaroundpolitics.com/articles/"+link, '_blank');
+            window.open("https://aap.thegeniusallegiance.com/articles/"+link, '_blank');
           }
           }
         });

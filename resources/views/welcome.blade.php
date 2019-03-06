@@ -68,13 +68,11 @@
             }
         </style>
         <script>
-        window.addEventListener('load', function() {
-          Notification.requestPermission(function (permission) {
-           console.log('Notifications granted');
-          });
-         new Worker('/js/sw.js');
-       });
-
+        if('serviceWorker' in navigator) {
+          navigator.serviceWorker
+                   .register('/sw.js')
+                   .then(function() { console.log("Service Worker Registered"); });
+        }
         </script>
 
 

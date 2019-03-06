@@ -1,38 +1,25 @@
-"use strict";
-importScripts('socket.io-1.4.5.js');
-function notifyMe(message,link) {
+var cacheName = 'aap-cache';
+var filesToCache = [
+  '/articles',
+  '/css/all.css',
+  '/js/all.js',
+  '/'
+];
 
-
-  // Let's check whether notification permissions have already been granted
- if (Notification.permission === "granted") {
-    // If it's okay let's create a notification
-    if (permission === "granted") {
-      var options = {
-        data: {
-          url:link,
-          sound: "https://allaroundpolitics.com/censor.mp3'",
-          vibrate: [200, 100, 200]
-        }
-      };
-      var notification = new Notification(message,options);
-      notification.onclick = function(event) {
-      event.preventDefault(); // prevent the browser from focusing the Notification's tab
-      window.open("https://allaroundpolitics.com/articles/"+link, '_blank');
-    }
-    }
-  }
-
-  // Otherwise, we need to ask the user for permission
-  if (Notification.permission !== 'denied') {
-
-  }
-
-  // At last, if the user has denied notifications, and you
-  // want to be respectful there is no need to bother them any more.
-  }
-
-
-  var socket = io.connect("https://allaroundpolitics.com:6002");
-  socket.on('new-article',function(data){
-    notifyMe(data.title,data.url);
-  });
+self.addEventListener('install', function(e) {
+  console.log('[ServiceWorker] Install');
+  e.waitUntil(
+    caches.open(cacheName).then(function(cache) {
+      console.log('[ServiceWorker] Caching app shell');
+      return cache.addAll(filesToCache);
+    })
+  );
+});
+self.addEventListener('fetch', function(e) {
+  console.log('[ServiceWorker] Fetch', e.request.url);
+  e.respondWith(
+    caches.match(e.request).then(function(response) {
+      return response || fetch(e.request);
+    })
+  );
+});

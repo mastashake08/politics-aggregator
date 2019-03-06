@@ -19,6 +19,7 @@
     "feedparser": "^2.1.0",
     "ioredis": "^2.5.0",
     "request": "^2.79.0",
-    "socket.io": "^1.7.2"
+    "socket.io": "^1.7.2",
+    "vuetify": "^1.4.2"
   }
 }
