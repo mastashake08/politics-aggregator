@@ -32,7 +32,7 @@
 <meta name="twitter:title" content="@yield('title')" />
 <meta name="twitter:description" content="@yield('description')" />
 <meta property="twitter:image" content=@yield('image') />
-<meta name="theme-color"/>
+<meta name="theme-color" content="#000000"/>
     <title>{{ config('app.name', 'Laravel') }} - @yield('title')</title>
 
     <!-- Styles -->
