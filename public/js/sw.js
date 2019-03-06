@@ -26,11 +26,17 @@ self.addEventListener('install', function(e) {
 self.addEventListener('activate',  event => {
   event.waitUntil(self.clients.claim());
 });
-self.addEventListener('fetch', event => {
-  console.log('Fetch',event)
-  event.respondWith(
-    caches.match(event.request, {ignoreSearch:true}).then(response => {
-      return response || fetch(event.request);
-    })
-  );
-});
+
+self.addEventListener('fetch', function(event) {
+
+console.log(event.request.url);
+
+event.respondWith(
+
+caches.match(event.request).then(function(response) {
+
+return response || fetch(event.request);
+
+})
+);
+});;
